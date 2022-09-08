@@ -406,7 +406,7 @@ val it: int list = [0; 17; 1; 0; 1; 1; 2; 6; 5]
 *)
 
 (* Output the integers in list inss to the text file called fname: *)
-let regex = Regex ""
+let regex = Regex "^(?!.*[a][a])+([a-b]*)"
 
 let intsToFile (inss : int list) (fname : string) = 
     let text = String.concat " " (List.map string inss)
