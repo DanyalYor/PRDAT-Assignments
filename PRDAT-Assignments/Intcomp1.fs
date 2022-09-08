@@ -7,6 +7,8 @@
 
 module Intcomp1
 
+open System.Text.RegularExpressions
+
 let env = [("a", 3); ("c", 78); ("baf", 666); ("b", 111)];;
 
 type expr = 
