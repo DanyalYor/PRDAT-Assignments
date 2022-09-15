@@ -15,6 +15,10 @@ Question 2:
 1 new file was generated called 'hello.fs' with 3 states.
 
 Question 3:  
-Followed the slide. Generated the helo.exe and ran it. It produced the expected output when giving it 3.
+Followed the slide. Generated the hello.exe and ran it. It produced the expected output when giving it 3.
+All the necessary files are in the HelloLex directory.
 
 Question 4:  
+Hello2.exe is in the HelloLex directory.
+
+Question 5:  
