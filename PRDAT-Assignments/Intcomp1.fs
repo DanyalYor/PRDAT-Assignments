@@ -409,7 +409,7 @@ val it: int list = [0; 17; 1; 0; 1; 1; 2; 6; 5]
 let regex32 = Regex "^(?!.*[a][a])+([a-b]*)"
 let regex21a = Regex "[0-9]*42[0-9]*"
 let regex21b = Regex "^(?![0-9]*42).*"
-let regex21c = Regex "([5-9][0-9]|[0-9]{3}|4[3-9])"
+let regex21c = Regex "([5-9][0-9]|[0-9]{3,}|4[3-9])"
 
 
 let intsToFile (inss : int list) (fname : string) = 
