@@ -10,7 +10,7 @@ let z = (17) in z + 2 * 3 end EOF
 (let z = (LPAR (CSTINT 17) RPAR) in ((NAME z) PLUS ((CSTINT 2) TIMES (CSTINT 3)))) (by rule E on the right most variable)  
 (LET (NAME z) EQ (LPAR (CSTINT 17) RPAR) IN ((NAME z) PLUS ((CSTINT 2) TIMES (CSTINT 3)))) (by rule F on the right most variable)  
 
-3.4
+3.4  
 3-4 image.png
 
 3.5  
