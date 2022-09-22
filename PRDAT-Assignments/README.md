@@ -1,25 +1,28 @@
-# Assignment 2
+# Assignment 3
+3.3  
+let z = (17) in z + 2 * 3 end EOF
+(let z = (17) in z + 2 * 3 end) (by rule A on the right most variable)
+(let z = (17) in z + 2 * (CSTINT 3)) (by rule C on the right most variable)
+(let z = (17) in z + 2 TIMES (CSTINT 3)) (by rule G on the right most variable)
+(let z = (17) in z + (CSTINT 2) TIMES (CSTINT 3)) (by rule C on the right most variable)
+(let z = (17) in z PLUS ((CSTINT 2) TIMES (CSTINT 3))) (by rule H on the right most variable)
+(let z = (17) in ((NAME z) PLUS ((CSTINT 2) TIMES (CSTINT 3)))) (by rule B on the right most variable)
+(let z = (LPAR (CSTINT 17) RPAR) in ((NAME z) PLUS ((CSTINT 2) TIMES (CSTINT 3)))) (by rule E on the right most variable)
+(LET (NAME z) EQ (LPAR (CSTINT 17) RPAR) IN ((NAME z) PLUS ((CSTINT 2) TIMES (CSTINT 3)))) (by rule F on the right most variable)
 
-Exercise 2.4, Intcomp1.fs, begins at line 390  
-Exercise 2.5, ex1.txt + Machine.class  
-Exercise 3.2, Intcomp1.fs, line 409 + Exercise3.2NFA.jpg + Exercise3.2DFA.jpg  
+3.4
+3-4 image.png
 
-Exercise 2.1, Intcomp1.fs, begins at line 410  
-Exercise 2.2, Exercise2.2a.png + Exercise2.2b.png
+3.5  
+In the Expr directory the following commands:  
+fslex --unicode ExprLex.fsl  
+fsyacc --module ExprPar ExprPar.fsy  
+fsharpi -r ~/fsharp/FsLexYacc.Runtime.dll Absyn.fs ExprPar.fs ExprLex.fs Parse.fs  
 
-# HelloLex
-Question 1:  
-The regular expression involved is: [0-9]. This has the semantic values of any digit between 0 and 9 (including).
+3.6  
+Expr.fs - line 319.
 
-Question 2:  
-1 new file was generated called 'hello.fs' with 3 states.
-
-Question 3:  
-Followed the slide. Generated the hello.exe and ran it. It produced the expected output when giving it 3.
-All the necessary files are in the HelloLex directory.
-
-Question 4:  
-Hello2.exe is in the HelloLex directory.
-
-Question 5:  
-Hello3.exe in HelloLex directory
+3.7  
+Absyn.fs - line 12
+ExprLex.fsl - line 22-24
+ExprPar.fsy - line 14-16 & line 40
