@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df1aefd6-f4e6-45e7-b93d-5f223b75f2f3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/PRDAT-Assignments/Fun/Absyn.fs" beforeDir="false" afterPath="$PROJECT_DIR$/PRDAT-Assignments/Fun/Absyn.fs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PRDAT-Assignments.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PRDAT-Assignments.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PRDAT-Assignments/Fun/Fun.fs" beforeDir="false" afterPath="$PROJECT_DIR$/PRDAT-Assignments/Fun/Fun.fs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PRDAT-Assignments/Fun/FunLex.fs" beforeDir="false" afterPath="$PROJECT_DIR$/PRDAT-Assignments/Fun/FunLex.fs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PRDAT-Assignments/Fun/FunLex.fsl" beforeDir="false" afterPath="$PROJECT_DIR$/PRDAT-Assignments/Fun/FunLex.fsl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PRDAT-Assignments/Fun/FunPar.fs" beforeDir="false" afterPath="$PROJECT_DIR$/PRDAT-Assignments/Fun/FunPar.fs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PRDAT-Assignments/Fun/FunPar.fsi" beforeDir="false" afterPath="$PROJECT_DIR$/PRDAT-Assignments/Fun/FunPar.fsi" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PRDAT-Assignments/Fun/FunPar.fsy" beforeDir="false" afterPath="$PROJECT_DIR$/PRDAT-Assignments/Fun/FunPar.fsy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PRDAT-Assignments/obj/Debug/net6.0/PRDAT-Assignments.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PRDAT-Assignments/obj/Debug/net6.0/PRDAT-Assignments.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PRDAT-Assignments/Fun/README.TXT" beforeDir="false" afterPath="$PROJECT_DIR$/PRDAT-Assignments/Fun/README.TXT" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +48,7 @@
       <option name="presentableId" value="Default" />
       <updated>1663859263009</updated>
       <workItem from="1663859272398" duration="5423000" />
-      <workItem from="1664470549077" duration="1236000" />
+      <workItem from="1664470549077" duration="3040000" />
     </task>
     <servers />
   </component>
