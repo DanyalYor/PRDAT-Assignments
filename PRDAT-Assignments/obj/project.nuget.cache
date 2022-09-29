@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "f7+eXUv+zKaNGTl2xbJ9PB+qA6pAEVcJ8hZJs9tMIiM5b+K3Y2N3SG/nWOmz4gRD9gVbtprL6UJ+9sZH2FffMQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\deniz\\OneDrive\\Dokumenter\\GitHub\\PRDAT-Assignments-REAL\\PRDAT-Assignments\\PRDAT-Assignments.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\deniz\\.nuget\\packages\\fsharp.core\\6.0.1\\fsharp.core.6.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

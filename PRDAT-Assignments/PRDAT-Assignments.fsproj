@@ -16,6 +16,7 @@
         <Content Include="sierpinski.eps" />
         <Content Include="Machine.java" />
         <Content Include="Machine.class" />
+        <Content Include="fsharp\FsLexYacc.Runtime.dll" />
     </ItemGroup>
 
 </Project>
