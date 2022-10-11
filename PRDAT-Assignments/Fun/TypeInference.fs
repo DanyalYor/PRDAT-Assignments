@@ -53,6 +53,7 @@ type typ =
      | TypB                                (* booleans                   *)
      | TypF of typ * typ                   (* (argumenttype, resulttype) *)
      | TypV of typevar                     (* type variable              *)
+     | TypL of typ                         (* list, element type is typ  *)
 
 and tyvarkind =  
      | NoLink of string                    (* uninstantiated type var.   *)
@@ -106,6 +107,7 @@ let rec freeTypeVars t : typevar list =
     | TypB        -> []
     | TypV tv     -> (*(printfn "%s" ("found free tyvar"));*) [tv]
     | TypF(t1,t2) -> union(freeTypeVars t1, freeTypeVars t2)
+    | TypL typ    -> freeTypeVars typ 
 
 let occurCheck tyvar tyvars =                     
     if mem tyvar tyvars then failwith "type error: circularity" else ()
@@ -134,6 +136,7 @@ let rec typeToString t : string =
     | TypB         -> "bool"
     | TypV _       -> failwith "typeToString impossible"
     | TypF(t1, t2) -> "function"
+    | TypL typ     -> typeToString typ + " list"
 
 (* Pretty-print type, using names 'a, 'b, ... for type variables *)
 
@@ -147,6 +150,7 @@ let rec showType t : string =
           | (NoLink name, _) -> name
           | _                -> failwith "showType impossible"
         | TypF(t1, t2) -> "(" + pr t1 + " -> " + pr t2 + ")"
+        | TypL typ -> showType typ + " list"
     pr t 
 
 let rec showTEnv tenv =
@@ -181,6 +185,7 @@ let rec unify t1 t2 : unit =
     | (TypI,     t) -> failwith ("type error: int and " + typeToString t)
     | (TypB,     t) -> failwith ("type error: bool and " + typeToString t)
     | (TypF _,   t) -> failwith ("type error: function and " + typeToString t)
+    | (TypL _,   t) -> failwith ("type error: list and " + typeToString t)
 
 (* Generate fresh type variables *)
 
@@ -211,6 +216,7 @@ let rec generalize level (t : typ) : typescheme =
 
 let rec copyType subst t : typ = 
     match t with
+    | TypL typ -> TypL (copyType subst typ)
     | TypV tyvar ->
       let (* Could this be rewritten so that loop does only the substitution *)
           rec loop subst1 =          
@@ -296,4 +302,3 @@ let rec tyinf e0 = typ 0 [] e0
 let inferType e = 
     (tyvarno := 0;
      showType (tyinf e));;
-
