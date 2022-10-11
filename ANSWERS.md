@@ -117,7 +117,12 @@ We have downloaded the required files and included them in the submission.
     ```
 
     **Question**: Is the result of this expected? <br/>
-    **Answer**: Yes, because ...
+    **Answer**: Yes, because if we take a look at the add function we can see that it leads to another
+    function which takes the parameter 'y', so it essentially expects 2 parameters in order to not utilize partial
+    application. Another function called addTwo is then initialized, which calls the add function with 1 parameter (an int).
+    We then see an 'x' variable being initialized, but not used. At last there is a call to addTwo with the integer 5 and if
+    we take a look at what the add function does, we can see that the 5 will be "propagated" forward until finally being added to 2
+    which results in 7.
 
 4. Running the fourth program using `fromString` and `eval`:
 
