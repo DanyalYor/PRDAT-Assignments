@@ -75,6 +75,14 @@ Running the above will print:
 [2, 3, 3, 4, 5, 7, 12]
 ```
 
+## Assignment 5.7
+
+We started by adding a new type instance to the 'typ' type called 'TypL'.
+```fsharp
+    | TypL of typ                         (* list, element type is typ  *)
+```  
+We then updated the necessary functions to also take the new type instance into consideration.  
+
 ## Assignment 6.1
 
 We have downloaded the required files and included them in the submission.
