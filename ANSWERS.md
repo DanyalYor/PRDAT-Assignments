@@ -78,9 +78,11 @@ Running the above will print:
 ## Assignment 5.7
 
 We started by adding a new type instance to the 'typ' type called 'TypL'.
+
 ```fsharp
     | TypL of typ                         (* list, element type is typ  *)
 ```  
+
 We then updated the necessary functions to also take the new type instance into consideration.  
 
 ## Assignment 6.1
@@ -154,7 +156,7 @@ We have downloaded the required files and included them in the submission.
     **Explaination**: <br/>
     We get this result since our line only receives one argument. Thus partial application happens, and it cannot return just a number.
 
-## 6.2
+## Assignment 6.2
 
 We added a `Fun` type to `FunPar.fsy` and a new RA (right arrow) token.  
 
@@ -178,8 +180,13 @@ val it: HigherFun.value =
   Clos ("z", Prim ("+", Var "z", Var "y"), [("y", Int 22)])
 ```  
 
-## 6.3
+## Assignment 6.4
+...
+
+## Assignment 6.3
+
 We have edited the files as mentioned in the assignment to permit the anonymous functions. These changes can be found on:
+
 ```
 FunLex.fsl: Line 33, 47
 FunPar.fsy: Line 14, 21, 62
@@ -199,3 +206,212 @@ val it: HigherFun.value = Int 7
 ```
 
 As such, this assignment is now complete and our program now supports anonymous functions!
+
+## Assignement 6.5
+
+### Assignment 6.5.1
+
+1. Running:
+
+    ```fsharp
+    let f x = 1
+    in f f end
+    ```
+
+    Returns:
+
+    ```fsharp
+    val it: string = "int"
+    ```
+
+2. Running:
+
+    ```fsharp
+    let f g = g g
+    in f end
+    ```
+
+    Returns:
+
+    ```fsharp
+    System.Exception: type error: circularity
+    at FSI_0002.TypeInference.occurCheck[a](a tyvar, FSharpList`1 tyvars)
+    at FSI_0002.TypeInference.linkVarToType(FSharpRef`1 tyvar, typ t)
+    at FSI_0002.TypeInference.unify(typ t1, typ t2)
+    at FSI_0002.TypeInference.typ(Int32 lvl, FSharpList`1 env, expr e)
+    at FSI_0002.TypeInference.typ(Int32 lvl, FSharpList`1 env, expr e)
+    at FSI_0002.ParseAndType.inferType@7.Invoke(expr e)
+    at <StartupCode$FSI_0009>.$FSI_0009.main@()
+    Stopped due to error
+    ```
+
+    This errors because: ...
+
+3. Running:
+
+    ```fsharp
+    let f x =
+        let g y = y
+        in g false end
+    in f 42 end
+    ```
+
+    Returns:
+
+    ```fsharp
+    val it: string = "bool"
+    ```
+
+4. Running:
+
+    ```fsharp
+    let f x =
+        let g y = if true then y else x
+        in g false end
+    in f 42 end
+    ```
+
+    Returns:
+
+    ```fsharp
+    System.Exception: type error: bool and int
+    at FSI_0002.TypeInference.unify(typ t1, typ t2)
+    at FSI_0002.TypeInference.unify(typ t1, typ t2)
+    at FSI_0002.TypeInference.typ(Int32 lvl, FSharpList`1 env, expr e)
+    at FSI_0002.ParseAndType.inferType@7.Invoke(expr e)
+    at <StartupCode$FSI_0010>.$FSI_0010.main@()
+    Stopped due to error
+    ```
+
+    This errors because: ...
+
+5. Running:
+
+    ```fsharp
+    let f x =
+        let g y = if true then y else x
+        in g false end
+    in f true end
+    ```
+
+    Returns:
+
+    ```fsharp
+    val it: string = "bool"
+    ```
+
+### Assignment 6.5.2
+
+1. Type:
+
+    ```fsharp
+    bool -> bool
+    ```
+
+    Function:
+
+    ```fsharp
+    let f = let g y = if y then true else false in g end in f end
+    ```
+
+1. Type:
+
+    ```fsharp
+    int -> int
+    ```
+
+    Function:
+
+    ```fsharp
+    let f = let g y = if y < 10 then 5 else 6 in g end in f end
+    ```
+
+1. Type:
+
+    ```fsharp
+    int -> int -> int
+    ```
+
+    Function:
+
+    ```fsharp
+    let f = let x a = let y b = a + b in y end in x end in f end
+    ```
+
+1. Type:
+
+    ```fsharp
+    ’a -> ’b -> ’a
+    ```
+
+    Function:
+
+    ```fsharp
+    let f x = let g y = x in g end in f end
+    ```
+
+    Returns:
+
+    ```fsharp
+    val it: string = "('h -> ('g -> 'h))"
+    ```
+
+1. Type:
+
+    ```fsharp
+    ’a -> ’b -> ’b
+    ```
+
+    Function:
+
+    ```fsharp
+    let f x = let g x = x in g end in f end
+    ```
+
+    Returns:
+
+    ```fsharp
+    val it: string = "('g -> ('h -> 'h))"
+    ```
+
+1. Type:
+
+    ```fsharp
+    (’a -> ’b) -> (’b -> ’c) -> (’a -> ’c)
+    ```
+
+    Function:
+
+    ```fsharp
+    
+    ```
+
+1. Type:
+
+    ```fsharp
+    ’a -> ’b
+    ```
+
+    Function:
+
+    ```fsharp
+     let f x = f (x) in f end
+    ```
+
+    Returns:
+
+    ```fsharp
+    val it: string = "('e -> 'f)"
+    ```
+
+1. Type:
+
+    ```fsharp
+    ’a
+    ```
+
+    Function:
+
+    ```fsharp
+    
+    ```
