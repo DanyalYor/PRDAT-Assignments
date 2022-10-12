@@ -153,3 +153,14 @@ We have downloaded the required files and included them in the submission.
 
     **Explaination**: <br/>
     We can this because ...
+
+## 6.2
+We added a `Fun` type to `Fun.fs` and added that
+```fsharp
+> fromString "fun x -> 2*x";;
+val it: Absyn.expr = Fun ("x", Prim ("*", CstI 2, Var "x"))
+
+> fromString "let y = 22 in fun z -> z+y end";;
+val it: Absyn.expr =
+  Let ("y", CstI 22, Fun ("z", Prim ("+", Var "z", Var "y")))
+```
