@@ -181,13 +181,14 @@ val it: HigherFun.value =
 ```  
 
 ## Assignment 6.4
+
 ...
 
 ## Assignment 6.3
 
 We have edited the files as mentioned in the assignment to permit the anonymous functions. These changes can be found on:
 
-```
+```fsharp
 FunLex.fsl: Line 33, 47
 FunPar.fsy: Line 14, 21, 62
 
