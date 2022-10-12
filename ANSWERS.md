@@ -152,7 +152,7 @@ We have downloaded the required files and included them in the submission.
     ```
 
     **Explaination**: <br/>
-    We can this because ...
+    We get this result since our line only receives one argument. Thus partial application happens, and it cannot return just a number.
 
 ## 6.2
 We added a `Fun` type to `Fun.fs` and added that
