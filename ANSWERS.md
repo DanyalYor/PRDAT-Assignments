@@ -164,3 +164,25 @@ val it: Absyn.expr = Fun ("x", Prim ("*", CstI 2, Var "x"))
 val it: Absyn.expr =
   Let ("y", CstI 22, Fun ("z", Prim ("+", Var "z", Var "y")))
 ```
+
+## 6.3
+We have edited the files as mentioned in the assignment to permit the anonymous functions. These changes can be found on:
+```
+FunLex.fsl: Line 33, 47
+FunPar.fsy: Line 14, 21, 62
+
+Running the two functions explained:
+
+```fsharp
+let add x = fun y -> x+y in add 2 5 end
+let add = fun x -> fun y -> x+y in add 2 5 end
+```
+
+Returns:
+
+```fsharp
+val it: HigherFun.value = Int 7
+val it: HigherFun.value = Int 7
+```
+
+As such, this assignment is now complete and our program now supports anonymous functions!
