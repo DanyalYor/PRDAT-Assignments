@@ -155,15 +155,28 @@ We have downloaded the required files and included them in the submission.
     We get this result since our line only receives one argument. Thus partial application happens, and it cannot return just a number.
 
 ## 6.2
-We added a `Fun` type to `Fun.fs` and added that
+
+We added a `Fun` type to `FunPar.fsy` and a new RA (right arrow) token.  
+
 ```fsharp
 > fromString "fun x -> 2*x";;
-val it: Absyn.expr = Fun ("x", Prim ("*", CstI 2, Var "x"))
+val it: Absyn.expr = Fun ("x", Prim ("*", CstI 2, Var "x"))  
 
 > fromString "let y = 22 in fun z -> z+y end";;
 val it: Absyn.expr =
   Let ("y", CstI 22, Fun ("z", Prim ("+", Var "z", Var "y")))
-```
+```  
+
+We then added a new type called `Clos` to the `value` type in `HigherFun.fs` and also to the pattern matching in our eval method we extended it to also have a case for Fun and Clos.
+
+```fsharp
+> run (fromString "fun x -> 2*x");;
+val it: HigherFun.value = Clos ("x", Prim ("*", CstI 2, Var "x"), [])  
+
+> run (fromString "let y = 22 in fun z -> z+y end");;
+val it: HigherFun.value =
+  Clos ("z", Prim ("+", Var "z", Var "y"), [("y", Int 22)])
+```  
 
 ## 6.3
 We have edited the files as mentioned in the assignment to permit the anonymous functions. These changes can be found on:
