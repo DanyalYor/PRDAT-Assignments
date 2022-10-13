@@ -385,12 +385,12 @@ PDF with abstract trees is called `Exercise6-4.pdf´
     Function:
 
     ```fsharp
-    let f x = let g y = let h z in h x end in g y end in f z end 
+    let a f = let b g = let h x = g (f x) in h end in b end in a end
     ```
 
     Returns:
     ```fsharp
-    
+    val it: string = "(('l -> 'k) -> (('k -> 'm) -> ('l -> 'm)))"
     ```
 
 1. Type:
