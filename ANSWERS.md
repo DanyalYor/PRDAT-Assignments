@@ -83,7 +83,7 @@ We started by adding a new type instance to the 'typ' type called 'TypL'.
     | TypL of typ                         (* list, element type is typ  *)
 ```  
 
-We then updated the necessary functions to also take the new type instance into consideration.  
+We then updated the necessary functions in `TypeInference.fs` to also take the new type instance into consideration. 
 
 ## Assignment 6.1
 
