@@ -207,7 +207,7 @@ As such, this assignment is now complete and our program now supports anonymous 
 
 ## Assignment 6.4
 
-...
+PDF with abstract trees is called "Exercise6-4.pdf"
 
 ## Assignement 6.5
 
