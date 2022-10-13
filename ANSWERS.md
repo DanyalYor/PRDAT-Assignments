@@ -180,10 +180,6 @@ val it: HigherFun.value =
   Clos ("z", Prim ("+", Var "z", Var "y"), [("y", Int 22)])
 ```  
 
-## Assignment 6.4
-
-...
-
 ## Assignment 6.3
 
 We have edited the files as mentioned in the assignment to permit the anonymous functions. These changes can be found on:
@@ -207,6 +203,11 @@ val it: HigherFun.value = Int 7
 ```
 
 As such, this assignment is now complete and our program now supports anonymous functions!
+
+
+## Assignment 6.4
+
+...
 
 ## Assignement 6.5
 
