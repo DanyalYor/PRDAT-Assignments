@@ -18,7 +18,7 @@
 %token EOF
 
 %left IF THEN ELSE              /* lowest precedence  */
-%left EQ NE 
+%left EQ NE AND OR
 %left GT LT GE LE
 %left PLUS MINUS
 %left TIMES DIV MOD 
