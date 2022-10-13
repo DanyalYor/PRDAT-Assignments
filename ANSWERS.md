@@ -377,13 +377,11 @@ PDF with abstract trees is called `Exercise6-4.pdf´
     ```
 
 1. Type:
-
     ```fsharp
     (’a -> ’b) -> (’b -> ’c) -> (’a -> ’c)
     ```
 
     Function:
-
     ```fsharp
     let a f = let b g = let h x = g (f x) in h end in b end in a end
     ```
