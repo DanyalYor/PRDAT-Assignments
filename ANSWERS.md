@@ -246,7 +246,7 @@ As such, this assignment is now complete and our program now supports anonymous 
     Stopped due to error
     ```
 
-    This errors because: ...
+    This error occurs because the function f takes a parameter g which when looking at the function body is a function which takes a parameter. We then end up with a never-ending type hence the type error: circularity.  
 
 3. Running:
 
@@ -284,7 +284,7 @@ As such, this assignment is now complete and our program now supports anonymous 
     Stopped due to error
     ```
 
-    This errors because: ...
+    This errors occurs because we are trying to return 2 different types in an if else statement.
 
 5. Running:
 
