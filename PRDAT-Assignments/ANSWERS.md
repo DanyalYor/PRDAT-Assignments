@@ -132,6 +132,18 @@ val it: Interp.store =
 
 Our implementation of the `histogram` function can be found in the `histogram.c` file. When we run this file, we get:
 
+```fsharp
+>    run (fromFile "histogram.c") [0];;
+1
+4
+2
+0
+val it: Interp.store =
+  map
+    [(0, 0); (1, 1); (2, 4); (3, 2); (4, 0); (5, 1); (6, 1); (7, 2); (8, 1);
+     ...]
+```
+
 # Assignment 7.3
 
 # Assignment 7.4
