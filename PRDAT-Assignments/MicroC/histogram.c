@@ -5,6 +5,7 @@ void main(int n)
     freq[1] = 0;
     freq[2] = 0;
     freq[3] = 0;
+
     int arr[7];
     arr[0] = 1;
     arr[1] = 2;
@@ -14,20 +15,28 @@ void main(int n)
     arr[5] = 2;
     arr[6] = 0;
 
-
     histogram(7, arr, 4, freq);
 
-    print n;
+    print freq[0];
+    println;
+
+    print freq[1];
+    println;
+
+    print freq[2];
+    println;
+
+    print freq[3];
     println;
 }
-
 
 void histogram(int n, int ns[], int max, int freq[])
 {
     int i;
     for (i = 0; i<n; i+1)
     {
-        if (ns[i] < max) {
+        if (ns[i] < max)
+        {
             freq[ns[i]] = freq[ns[i]] + 1;
         }
     }
