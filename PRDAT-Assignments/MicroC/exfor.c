@@ -1,9 +1,8 @@
-
 void main(int n)
 {
   int i;
 
-  for (i = 0; i < 100; i = i + 1)
+  for (i = 0; i < 100; ++i)
   {
     print i;
   }
