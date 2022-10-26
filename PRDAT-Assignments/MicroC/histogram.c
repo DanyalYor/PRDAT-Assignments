@@ -25,12 +25,10 @@ void main(int n)
 void histogram(int n, int ns[], int max, int freq[])
 {
     int i;
-    i = 0;
-    while (i < n)
+    for (i = 0; i<n; i+1)
     {
         if (ns[i] < max) {
             freq[ns[i]] = freq[ns[i]] + 1;
         }
-        i = i + 1;
     }
 }
