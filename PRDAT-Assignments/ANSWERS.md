@@ -82,11 +82,11 @@ RET 0
 `ex5`
 
 ```fsharp
-LDARGS
-CALL (1, "L1")
+LDARGS // init
+CALL (1, "L1") 
 STOP
 Label "L1"
-INCSP 1
+INCSP 1 // main
 GETBP
 CSTI 1
 ADD
