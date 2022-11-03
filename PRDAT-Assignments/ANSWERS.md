@@ -46,6 +46,7 @@ INCSP -1
 GOTO "L3"
 Label "L2" // while
 GETBP
+
 CSTI 1
 ADD
 LDI // i
