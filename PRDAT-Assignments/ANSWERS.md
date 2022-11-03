@@ -32,24 +32,24 @@ We then went ahead and structured both byte codes and wrote what was happening i
 `ex3`
 
 ```fsharp
-LDARGS
+LDARGS // init
 CALL (1, "L1")
 STOP
-Label "L1"
-INCSP 1
+Label "L1" // void main function
+INCSP 1 // n parameter
 GETBP
 CSTI 1
-ADD
+ADD // int i
 CSTI 0
-STI
+STI // i = 0
 INCSP -1
 GOTO "L3"
-Label "L2"
+Label "L2" // while
 GETBP
 CSTI 1
 ADD
-LDI
-PRINTI
+LDI // i
+PRINTI // print i
 INCSP -1
 GETBP
 CSTI 1
@@ -76,6 +76,7 @@ LT
 IFNZRO "L2"
 INCSP -1
 RET 0
+
 ```
 
 `ex5`
