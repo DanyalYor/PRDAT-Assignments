@@ -66,13 +66,15 @@ rule Token = parse
   | "||"            { SEQOR }                     
   | "&&"            { SEQAND }                     
   | "&"             { AMP }                     
-  | "!"             { NOT }                     
+  | "!"             { NOT }  
+  | "?"             { QST }                   
   | '('             { LPAR }
   | ')'             { RPAR }
   | '{'             { LBRACE }
   | '}'             { RBRACE }
   | '['             { LBRACK }
   | ']'             { RBRACK }
+  | ':'             { COL }
   | ';'             { SEMI }
   | ','             { COMMA }
   | "++"            { PREINC }
