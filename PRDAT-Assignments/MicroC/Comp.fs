@@ -174,6 +174,8 @@ and cExpr (e : expr) (varEnv : varEnv) (funEnv : funEnv) : instr list =
          | "!"      -> [NOT]
          | "printi" -> [PRINTI]
          | "printc" -> [PRINTC]
+         | "++"     -> cAccess e1 varEnv funEnv @ [DUP; LDI; CSTI 1; ADD; STI;]
+         | "++"     -> cAccess e1 varEnv funEnv @ [DUP; LDI; CSTI -1; ADD; STI;]
          | _        -> raise (Failure "unknown primitive 1"))
     | Prim2(ope, e1, e2) ->
       cExpr e1 varEnv funEnv
