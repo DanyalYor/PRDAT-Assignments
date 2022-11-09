@@ -5,8 +5,13 @@ using System;
 
 class Selsort {
   public static void Main(String[] args) {
-    int count = 10;
+    Console.WriteLine("initialising the program and setting up array...");
+    int count = 10000;
     int[] arr = new int[count];
+    Console.WriteLine("\nPress return to continue...");
+    Console.In.Read(); 
+    Console.WriteLine("\nNow running SelectionSort");
+
     for (int i=0; i<count; i++)
       arr[i] = rnd.Next(1000000);
     SelectionSort(arr);
