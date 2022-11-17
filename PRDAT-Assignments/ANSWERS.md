@@ -1,5 +1,6 @@
 # Assignment 9
-## Exercise 10.1.1     
+
+## Exercise 10.1.1
 
 `ADD:`
 
@@ -45,12 +46,46 @@ We check if the last value is null otherwise we set the top of the stack to the 
 3. We then save v as the second element in p.
 
 ## Exercise 10.1.3
+
 If we take a look at the code in `listmachine.c` we see that the only place where `allocate()` is being utilised is within the `CONS` instruction.
 
+## Exercise 10.1.2
+
+We have the block header `ttttttttnnnnnnnnnnnnnnnnnnnnnngg`, that's a 32 bit word.
+
+Explanation for each character:
+
+- `t`: is the block tag
+- `n` is the block length
+- `g` is the GC color
+
+Applying:
+
+- **Length:** Length takes in a header, and returns the length of the word block in that header.
+
+  It does this in the following steps:
+  1. First it shifts the 2 bits at the right end away by using the `>>` operator - these are the bits representing the color.
+  2. It then uses AND (`&`) with the `0x003FFFFF` value. Doing all this, returns the length of the word block.
+
+- **Color:** Color takes in a header, and returns the color of the header, which is an integer between 0-3, each representing a color.
+
+  It does this in the following steps:
+  1. It simply uses AND (`&`) 3 on the header.
+  2. This will make it return a number between 0-3.
+
+- **Paint:** Paint takes in two parameters, the header and the new color. It then returns a copy of the header word, with the color we specified.
+
+  It does this in the following steps:
+  1. First we use NEGATE (`~`) on the integer value 3.
+  2. Then we use AND (`&`) on the header with the result from step 1.
+  3. Then we simply OR (`|`) the result from step 2 with the color.
+
 ## Exercise 10.1.4
+
 If we, once again, take a look at the code in `listmachine.c` we see that the garbage collector's `collect()` method is being called when we are allocating, but there is no free space, so we do a garbage collection, by running `collect()`.
 
 ## Exercise 10.2 & 10.3
+
 Our solution to these two assignments can be foudn in the `listmachine.c` file. Running these commands works perfectly with our solution:
 
 ```fsharp
