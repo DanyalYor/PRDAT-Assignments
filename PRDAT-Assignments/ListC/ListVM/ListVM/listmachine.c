@@ -499,7 +499,7 @@ void sweepPhase() {
 
     int color = Color(heapPtr[0]);
 
-    if (color == Black){
+    if (color == Black) {
       Paint(heapPtr[0], White);
     }
     else if (color == White) {
@@ -510,8 +510,8 @@ void sweepPhase() {
 
     heapPtr = nextBlock;
   }
-  freelist = newFreelist;
 
+  freelist = newFreelist;
 }
 
 void collect(word s[], word sp) {

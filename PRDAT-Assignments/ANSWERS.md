@@ -1,5 +1,5 @@
 # Assignment 9
-`10.1.1`     
+## Exercise 10.1.1     
 
 `ADD:`
 
@@ -43,3 +43,14 @@ We check if the last value is null otherwise we set the top of the stack to the 
 1. We take the second to last element in the stack and save it as v
 2. We the take the last element in the stack and save it as p
 3. We then save v as the second element in p.
+
+## Exercise 10.2 & 10.3
+Our solution to these two assignments can be foudn in the `listmachine.c` file. Running these commands works perfectly with our solution:
+
+```fsharp
+listmachine ex30.out 1000
+listmachine ex30.out 10000
+listmachine ex30.out 100000
+```
+
+Solution for 10.3 specifically can be found on line **498**.
