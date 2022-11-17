@@ -45,10 +45,6 @@ We check if the last value is null otherwise we set the top of the stack to the 
 2. We the take the last element in the stack and save it as p
 3. We then save v as the second element in p.
 
-## Exercise 10.1.3
-
-If we take a look at the code in `listmachine.c` we see that the only place where `allocate()` is being utilised is within the `CONS` instruction.
-
 ## Exercise 10.1.2
 
 We have the block header `ttttttttnnnnnnnnnnnnnnnnnnnnnngg`, that's a 32 bit word.
@@ -79,6 +75,10 @@ Applying:
   1. First we use NEGATE (`~`) on the integer value 3.
   2. Then we use AND (`&`) on the header with the result from step 1.
   3. Then we simply OR (`|`) the result from step 2 with the color.
+
+## Exercise 10.1.3
+
+If we take a look at the code in `listmachine.c` we see that the only place where `allocate()` is being utilised is within the `CONS` instruction.
 
 ## Exercise 10.1.4
 
