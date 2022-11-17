@@ -44,6 +44,12 @@ We check if the last value is null otherwise we set the top of the stack to the 
 2. We the take the last element in the stack and save it as p
 3. We then save v as the second element in p.
 
+## Exercise 10.1.3
+If we take a look at the code in `listmachine.c` we see that the only place where `allocate()` is being utilised is within the `CONS` instruction.
+
+## Exercise 10.1.4
+If we, once again, take a look at the code in `listmachine.c` we see that the garbage collector's `collect()` method is being called when we are allocating, but there is no free space, so we do a garbage collection, by running `collect()`.
+
 ## Exercise 10.2 & 10.3
 Our solution to these two assignments can be foudn in the `listmachine.c` file. Running these commands works perfectly with our solution:
 
