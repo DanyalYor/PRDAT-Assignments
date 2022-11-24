@@ -471,47 +471,14 @@ void initheap() {
   freelist = &heap[0];
 }
 
-void mark(word* block) {
-  Paint(block[0], Black);
-}
-
 void markPhase(word s[], word sp) {
   printf("marking ...\n");
-  
-  // Mark all roots in the heap 
-  int i;
-
-  for (i = 0; i <= sp; i++) {
-    if (!IsInt(s[i])) {
-      mark((word*)s[i]);
-    }
-  }
+  // TODO: Actually mark something
 }
 
 void sweepPhase() {
   printf("sweeping ...\n");
-
-  word* heapPtr = heap;
-  word* newFreelist = 0;
-
-  while (heapPtr < afterHeap) {
-    word* nextBlock = heapPtr + Length(heapPtr[0]) + 1;
-
-    int color = Color(heapPtr[0]);
-
-    if (color == Black) {
-      Paint(heapPtr[0], White);
-    }
-    else if (color == White) {
-      heapPtr[1] = (word) newFreelist;
-      newFreelist = heapPtr;
-      Paint(heapPtr[0], Blue);
-    }
-
-    heapPtr = nextBlock;
-  }
-
-  freelist = newFreelist;
+  // TODO: Actually sweep
 }
 
 void collect(word s[], word sp) {
