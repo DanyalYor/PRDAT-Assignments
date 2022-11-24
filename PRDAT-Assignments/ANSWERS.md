@@ -65,6 +65,32 @@ val it: int = 3
 **What is the relation between lenc and leni?**
 They are both tail recursive.
 
+## Exercise 11.2
+
+## Exercise 11.2.1
+
+The `revc` function is implemented in the `ex_11_2.fs` file and looks like this:
+
+```fsharp
+let rec revc (xs: 'a list) (c: 'a list -> 'b): 'b = 
+    match xs with 
+    |[] -> c []
+    |x :: xr -> revc xr (fun v -> c (v @ [x]))
+```
+
+## Exercise 11.2.2
+
+Since our base case has a call to `c` and it is what we return, the result will be id appended to itself to itself and return it.
+
+## Exercise 11.2.3
+
+```fsharp
+let rec revi (xs: 'a list) (acc: 'a list): 'a list = 
+    match xs with 
+    |[] -> acc
+    |x :: xr -> revi xr (acc @ [x])
+```
+
 ## Exercise 11.3
 
 We have implemented the `prodc` function in the `ex_11_3.fs` file. It loos like this:
