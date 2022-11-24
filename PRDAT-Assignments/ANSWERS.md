@@ -63,8 +63,7 @@ val it: int = 3
 ```
 
 **What is the relation between lenc and leni?**
-They are both tail recursive. 
-
+They are both tail recursive.
 
 ## Exercise 11.3
 
@@ -94,6 +93,7 @@ val it: int = 70
 ```
 
 ## Exercise 11.4
+
 We have implemented the optimized `prodc` and the accumulator version of `prodi` in the `ex_11_4.fs` file.
 
 They look like this:
@@ -117,3 +117,13 @@ let rec prodi (xs: int list) (acc: int): int =
 Both of them terminates immediately when a zero is encountered.
 
 ## Exercise 11.8
+
+### Exercise 11.8.1
+
+
+```fsharp
+> run (Every(Write(Prim("+", CstI 1, Prim("*", CstI 2, FromTo(1, 4))))));;
+3 5 7 9 val it: value = Int 0
+```
+
+
