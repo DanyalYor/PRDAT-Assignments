@@ -65,3 +65,55 @@ val it: int = 3
 **What is the relation between lenc and leni?**
 They are both tail recursive. 
 
+
+## Exercise 11.3
+
+We have implemented the `prodc` function in the `ex_11_3.fs` file. It loos like this:
+
+```fsharp
+let rec prod xs =
+    match xs with
+    | [] -> 1
+    | x::xr -> x * prod xr;;
+
+
+let rec prodc (xs: int list) (c: int -> int): int =
+    match xs with
+    | [] -> c 1
+    | x::xr -> prodc xr (fun n -> c (x * n));;
+```
+
+Calling these two functions with the `xs` list defined from before, returns the following:
+
+```fsharp
+> prodc xs id;;
+val it: int = 70
+
+> prod xs;;
+val it: int = 70
+```
+
+## Exercise 11.4
+We have implemented the optimized `prodc` and the accumulator version of `prodi` in the `ex_11_4.fs` file.
+
+They look like this:
+
+```fsharp
+// Optimized prod
+let rec prodc (xs: int list) (c: int -> int): int =
+    match xs with
+    | [] -> c 1
+    | 0::_ -> 0 
+    | x::xr -> prodc xr (fun n -> c (x * n));;
+
+// Tail recursive prod
+let rec prodi (xs: int list) (acc: int): int =
+    match xs with
+    | [] -> acc
+    | 0::_ -> 0
+    | x::xr -> prodi xr (x * acc);;
+```
+
+Both of them terminates immediately when a zero is encountered.
+
+## Exercise 11.8
