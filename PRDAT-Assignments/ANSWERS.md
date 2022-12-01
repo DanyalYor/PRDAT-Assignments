@@ -2,6 +2,14 @@
 
 ## Exercise 12.1
 
+addIFZERO can be found in the `Contcomp.fs` file at line 121-124.   
+The function looks like the following:   
+```fsharp
+let addIFZERO lab C = 
+    match C with
+    | (GOTO label :: C1) -> IFNZRO label :: C1
+    | _                -> IFZERO lab :: C
+```
 
 ## Exercise 12.2
 
@@ -68,4 +76,3 @@ As such, this works as intended!
 
 
 ## Exercise 12.4
-
