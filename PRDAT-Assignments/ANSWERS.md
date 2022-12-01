@@ -11,6 +11,17 @@ let addIFZERO lab C =
     | _                -> IFZERO lab :: C
 ```
 
+After adding the function, we then replaced the places IFZERO was called in `Contcomp.fs` with the newly implemented addIFZERO function.   
+The following places were replaced:   
+1. Line 210
+2. Line 293
+3. Line 297
+4. Line 302
+5. Line 310
+6. Line 321
+7. Line 321
+
+
 ## Exercise 12.2
 
 We have added the static compiling of the constant evaluations by extending the `addCST` function in `Contcomp.fs`. This can be found on line 101.
