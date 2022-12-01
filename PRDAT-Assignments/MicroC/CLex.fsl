@@ -59,6 +59,8 @@ rule Token = parse
   | "=="            { EQ } 
   | "!="            { NE }
   | '>'             { GT }
+  | '?'             { QUESTION }
+  | ':'             { COLON }
   | '<'             { LT }
   | ">="            { GE }
   | "<="            { LE }

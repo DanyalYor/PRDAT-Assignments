@@ -119,8 +119,8 @@ let rec addCST i C =
     | _                     -> CSTI i :: C
 
 let addIFZERO lab C = 
-    match (lab, C) with
-    | (GOTO label, C1) -> IFNZRO label :: C1
+    match C with
+    | (GOTO label :: C1) -> IFNZRO label :: C1
     | _                -> IFZERO lab :: C
             
 (* ------------------------------------------------------------------- *)
@@ -207,7 +207,7 @@ let rec cStmt stmt (varEnv : varEnv) (funEnv : funEnv) (C : instr list) : instr 
     | If(e, stmt1, stmt2) -> 
       let (jumpend, C1) = makeJump C
       let (labelse, C2) = addLabel (cStmt stmt2 varEnv funEnv C1)
-      cExpr e varEnv funEnv (IFZERO labelse :: cStmt stmt1 varEnv funEnv (addJump jumpend C2))
+      cExpr e varEnv funEnv (addIFZERO labelse (cStmt stmt1 varEnv funEnv (addJump jumpend C2)))
     | While(e, body) ->
       let labbegin = newLabel()
       let (jumptest, C1) = 
@@ -315,6 +315,10 @@ and cExpr (e : expr) (varEnv : varEnv) (funEnv : funEnv) (C : instr list) : inst
            (IFNZRO labtrue 
              :: cExpr e2 varEnv funEnv (addJump jumpend C2))
     | Call(f, es) -> callfun f es varEnv funEnv C
+    | Cond(e1, e2, e3) ->
+      let (jumpend, C1) = makeJump C
+      let (labelse, C2) = addLabel (cExpr e3 varEnv funEnv C1)
+      cExpr e2 varEnv funEnv (addIFZERO labelse (cExpr e1 varEnv funEnv (addJump jumpend C2)))
 
 (* Generate code to access variable, dereference pointer or index array: *)
 
