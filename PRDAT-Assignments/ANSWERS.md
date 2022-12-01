@@ -76,3 +76,11 @@ As such, this works as intended!
 
 
 ## Exercise 12.4
+
+Our solution is changes in our CPAR.fsy file, at line 134-135.
+
+**How does the code quality compare to the existing complicated compilation of && and ||?**
+
+Now instead of creating a new type of like Andalso or Orelse, we can reuse a our new Cond.
+
+Which we can see in our Contcomp.fs in our Cond pattern match (line 318), is a lot simpler than both Andalso and Orelse.
